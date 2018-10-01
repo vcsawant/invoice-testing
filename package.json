@@ -1,0 +1,14 @@
+{
+  "name": "invoice-buses",
+  "version": "1.0.0",
+  "description": "invoice for buses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Viren Sawant",
+  "license": "ISC",
+  "dependencies": {
+    "@rimiti/invoice-it": "^2.4.0"
+  }
+}
