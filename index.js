@@ -25,10 +25,34 @@ const emitter = {
   website: "www.dimsolution.com"
 };
 
-const order = invoiceIt.create(recipient, emitter);
+const article1 = {
+  description: "Mapco Regular Fill Gas",
+  tax: 7,
+  price: 30.09,
+  qt: 1
+};
 
-order.order
-  .getOrder()
+const article2 = {
+  description: "Round trip from LAX to BNA",
+  tax: 11,
+  price: 790.3,
+  qt: 1
+};
+
+const order = invoiceIt.create(recipient, emitter);
+console.log(order.logo);
+order.logo =
+  "https://cdn1.imggmi.com/uploads/2018/10/2/e44b03e2766ceebda30d5989182d337c-full.png";
+console.log(order.logo);
+order.article = [article1, article2];
+
+order
+  .getInvoice()
+  .toHTML()
+  .toFile("./order.html");
+
+order
+  .getInvoice()
   .toPDF()
   .toFile("./order.pdf")
   .then(() => {
