@@ -1,5 +1,13 @@
 const invoiceIt = require("@rimiti/invoice-it");
 
+invoiceIt.configure({
+  language: {
+    locales: ["en"],
+    directory: `${__dirname}/locales`,
+    defaultLocale: "en"
+  }
+});
+
 const recipient = {
   company_name: "Receiver company",
   first_name: "Will",
